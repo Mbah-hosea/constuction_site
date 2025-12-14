@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | MCK Construction</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  color: #fff;
+  background: url('images/project1.jpg') center/cover no-repeat fixed;
+  overflow-x: hidden;
+}
+
+/* Overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(11,44,77,0.6);
+  z-index: -1;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: rgba(11,44,77,0.85);
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  flex: 1;
+  text-align: center;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #f4b41a;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(11,44,77,0.95);
+}
+
+.mobile-menu a {
+  color: #fff;
+  padding: 12px 20px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  text-decoration: none;
+}
+
+/* ===== HERO PARALLAX ===== */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-overlay {
+  background: rgba(0,0,0,0.5);
+  padding: 40px 20px;
+  border-radius: 10px;
+  animation: fadeInDown 1.2s ease forwards;
+}
+
+.hero-overlay h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-overlay p {
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-content {
+  max-width: 1100px;
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  background: rgba(255,255,255,0.9);
+  color: #0b2c4d;
+  border-radius: 8px;
+  padding: 30px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  color: #0b2c4d;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+/* ===== MISSION, VISION, SLOGAN ===== */
+.mvs-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1100px;
+  margin: 50px auto;
+  gap: 20px;
+}
+
+.mvs-box {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(255,255,255,0.85);
+  color: #0b2c4d;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.mvs-box:nth-child(1) { animation-delay: 0.6s; }
+.mvs-box:nth-child(2) { animation-delay: 0.8s; }
+.mvs-box:nth-child(3) { animation-delay: 1s; }
+
+.mvs-box h3 {
+  margin-bottom: 10px;
+}
+
+/* ===== FAQ SECTION ===== */
+.faq-section {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 8px;
+  overflow: hidden;
+  color: #0b2c4d;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 15px 20px;
+  background: #0b2c4d;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: #f4b41a;
+  color: #0b2c4d;
+}
+
+.faq-answer {
+  padding: 15px 20px;
+  display: none;
+  background: rgba(255,255,255,0.85);
+  line-height: 1.6;
+}
+
+/* ===== OPERATIONS HIGHLIGHT ===== */
+.operations {
+  max-width: 1100px;
+  margin: 70px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.operation-box {
+  background: rgba(255,255,255,0.9);
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,.1);
+  color: #0b2c4d;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.operation-box:nth-child(1) { animation-delay: 0.6s; }
+.operation-box:nth-child(2) { animation-delay: 0.8s; }
+.operation-box:nth-child(3) { animation-delay: 1s; }
+.operation-box:nth-child(4) { animation-delay: 1.2s; }
+
+.operation-box h3 {
+  margin-bottom: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: rgba(11,44,77,0.85);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  nav { display: none; }
+  .menu-icon { display: block; }
+  .hero-overlay h1 { font-size: 32px; }
+  .hero-overlay p { font-size: 16px; }
+  .about-content { flex-direction: column; }
+  .mvs-section { flex-direction: column; }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInDown {
+  0% { opacity:0; transform:translateY(-50px); }
+  100% { opacity:1; transform:translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity:0; transform:translateY(50px); }
+  100% { opacity:1; transform:translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo">
+      <img src="images/logo.jpg" alt="MCK Construction Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="departments.html">Departments</a>
+      <a href="projects.html">Projects</a>
+      <a href="students.html">Students</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="departments.html">Departments</a>
+    <a href="projects.html">Projects</a>
+    <a href="students.html">Students</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<!-- PARALLAX HERO -->
+<section class="hero parallax">
+  <div class="hero-overlay">
+    <h1>About MCK Construction</h1>
+    <p>Excellence in residential, commercial, and industrial construction projects across Cameroon.</p>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="about-content">
+  <div class="about-image">
+    <img src="images/about-image.jpg" alt="MCK Construction Team">
+  </div>
+  <div class="about-text">
+    <h2>Who We Are</h2>
+    <p>MCK Construction is a leading construction company in Cameroon, specializing in residential, commercial, and industrial projects. Our team combines expert architects, engineers, and skilled workers to deliver quality that lasts.</p>
+    <p>We bridge the gap between design and execution by ensuring every project is completed with precision, professionalism, and on time.</p>
+  </div>
+</section>
+
+<!-- MISSION, VISION, SLOGAN -->
+<section class="mvs-section">
+  <div class="mvs-box">
+    <h3>Our Mission</h3>
+    <p>To deliver high-quality construction projects with integrity, innovation, and commitment to client satisfaction.</p>
+  </div>
+  <div class="mvs-box">
+    <h3>Our Vision</h3>
+    <p>To be the most trusted construction company in Cameroon, recognized for excellence in design, execution, and sustainability.</p>
+  </div>
+  <div class="mvs-box">
+    <h3>Our Slogan</h3>
+    <p>"Building Dreams, Creating Futures."</p>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <button class="faq-question">How long does a residential project usually take?</button>
+    <div class="faq-answer">
+      <p>Typical residential projects take 6-12 months depending on design complexity and size.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Do you provide commercial project services?</button>
+    <div class="faq-answer">
+      <p>Yes, we handle commercial projects including offices, malls, and warehouses.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Can I apply for an internship?</button>
+    <div class="faq-answer">
+      <p>Yes, you can apply via the Students page or through the Services > Internship section.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OPERATIONS HIGHLIGHT -->
+<section class="operations">
+  <div class="operation-box">
+    <h3>Residential Construction</h3>
+    <p>Modern homes from foundation to finishing, tailored to client needs.</p>
+  </div>
+  <div class="operation-box">
+    <h3>Commercial Projects</h3>
+    <p>Offices, malls, and business complexes built with professionalism.</p>
+  </div>
+  <div class="operation-box">
+    <h3>Industrial Projects</h3>
+    <p>Factories, warehouses, and heavy structures delivered efficiently.</p>
+  </div>
+  <div class="operation-box">
+    <h3>Renovation & Remodeling</h3>
+    <p>Upgrading existing structures with modern designs and quality work.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 MCK Construction. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  const menu=document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+
+/* FAQ Accordion */
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(q => {
+  q.addEventListener('click', () => {
+    const answer = q.nextElementSibling;
+    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+  });
+});
+</script>
+
+</body>
+</html>

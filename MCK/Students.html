@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Students & Internship | MCK Construction</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  background:#f4f6f8;
+  color:#333;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:#0b2c4d;
+  padding:15px 20px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.header-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  flex:1;
+  text-align:center;
+}
+
+.logo img{
+  height:60px;
+}
+
+nav{
+  display:flex;
+  gap:20px;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.menu-icon{
+  display:none;
+  font-size:26px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu{
+  display:none;
+  flex-direction:column;
+  background:#0b2c4d;
+}
+
+.mobile-menu a{
+  color:#fff;
+  padding:12px 20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  text-decoration:none;
+}
+
+/* ===== HERO SLIDER ===== */
+.hero{
+  height:85vh;
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+}
+
+.hero-slide{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+
+.hero-slide.active{
+  opacity:1;
+}
+
+.hero-overlay{
+  background:rgba(0,0,0,.6);
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero-overlay h1{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.hero-overlay p{
+  font-size:18px;
+  max-width:750px;
+  margin:auto;
+}
+
+/* ===== SECTIONS ===== */
+section{
+  padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+section h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:#0b2c4d;
+}
+
+/* ===== INFO GRID ===== */
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.info-box{
+  background:#fff;
+  padding:25px;
+  border-radius:8px;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+/* ===== FORM ===== */
+form{
+  background:#fff;
+  padding:35px;
+  border-radius:8px;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+}
+
+label{
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+input, select, textarea{
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+textarea{
+  resize:none;
+}
+
+form button{
+  margin-top:25px;
+  background:#0b2c4d;
+  color:#fff;
+  border:none;
+  padding:14px;
+  font-size:16px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+form button:hover{
+  background:#083058;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#0b2c4d;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  nav{display:none;}
+  .menu-icon{display:block;}
+  .hero-overlay h1{font-size:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <div class="logo">
+      <img src="images/logo.jpg" alt="MCK Construction Logo">
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="departments.html">Departments</a>
+      <a href="projects.html">Projects</a>
+      <a href="students.html">Students</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="departments.html">Departments</a>
+    <a href="projects.html">Projects</a>
+    <a href="students.html">Students</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<!-- HERO SLIDER -->
+<div class="hero">
+  <div class="hero-slide active" style="background-image:url('images/students1.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/students2.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/students3.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/students4.jpg')"></div>
+
+  <div class="hero-overlay">
+    <div>
+      <h1>Students & Internship Program</h1>
+      <p>Hands-on construction training designed to prepare students for real-world professional practice.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WHO CAN APPLY -->
+<section>
+  <h2>Who Can Apply</h2>
+  <div class="info-grid">
+    <div class="info-box">Architecture Students</div>
+    <div class="info-box">Civil / Building Engineering</div>
+    <div class="info-box">Electrical & Plumbing Trades</div>
+    <div class="info-box">Construction Management</div>
+  </div>
+</section>
+
+<!-- INTERNSHIP DETAILS -->
+<section>
+  <h2>Internship Details</h2>
+  <div class="info-grid">
+    <div class="info-box">
+      <strong>Duration:</strong> 3 – 12 Months
+    </div>
+    <div class="info-box">
+      <strong>Training Type:</strong> IT, SIWES, Vacation Internship
+    </div>
+    <div class="info-box">
+      <strong>Learning Areas:</strong> Site work, supervision, safety, teamwork
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section>
+  <h2>Internship Application Form</h2>
+
+  <form>
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" required>
+      </div>
+
+      <div class="form-group">
+        <label>Institution</label>
+        <input type="text" required>
+      </div>
+
+      <div class="form-group">
+        <label>Field of Study</label>
+        <select required>
+          <option value="">Select</option>
+          <option>Architecture</option>
+          <option>Civil Engineering</option>
+          <option>Building Technology</option>
+          <option>Electrical</option>
+          <option>Plumbing</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Internship Type</label>
+        <select required>
+          <option value="">Select</option>
+          <option>Industrial Training (IT)</option>
+          <option>SIWES</option>
+          <option>Vacation Internship</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Preferred Start Date</label>
+        <input type="date">
+      </div>
+
+      <div class="form-group">
+        <label>Duration (Months)</label>
+        <input type="number" min="1">
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label>Why do you want this internship?</label>
+      <textarea rows="4"></textarea>
+    </div>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 MCK Construction. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+
+/* HERO SLIDER */
+let slides = document.querySelectorAll(".hero-slide");
+let index = 0;
+
+setInterval(()=>{
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+},5000);
+</script>
+
+</body>
+</html>

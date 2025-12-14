@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCK Construction | Home</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Roboto', sans-serif;
+}
+
+body {
+  background:#f0f0f0;
+  color:#0b2c4d;
+  overflow-x:hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: rgba(11,44,77,0.85);
+  padding:15px 20px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,.3);
+}
+
+.header-container {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo {
+  flex:1;
+  text-align:center;
+}
+
+.logo img { height:60px; }
+
+nav {
+  display:flex;
+  gap:20px;
+}
+
+nav a {
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  transition:color 0.3s;
+}
+
+nav a:hover { color:#f4b41a; }
+
+.menu-icon {
+  display:none;
+  font-size:28px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+  display:none;
+  flex-direction:column;
+  background:rgba(11,44,77,0.95);
+}
+
+.mobile-menu a {
+  color:#fff;
+  padding:12px 20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  text-decoration:none;
+}
+
+/* ===== HERO SLIDER ===== */
+.slider {
+  position:relative;
+  max-width:100%;
+  height:80vh;
+  overflow:hidden;
+}
+
+.slides {
+  display:flex;
+  width:100%;
+  height:100%;
+  transition: transform 1s ease;
+}
+
+.slides img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.slider-buttons {
+  position:absolute;
+  top:50%;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  transform:translateY(-50%);
+}
+
+.prev, .next {
+  background:rgba(11,44,77,0.6);
+  color:#fff;
+  border:none;
+  padding:10px 15px;
+  cursor:pointer;
+  font-size:20px;
+  border-radius:5px;
+  margin:0 10px;
+}
+
+.prev:hover, .next:hover { background:#f4b41a; color:#0b2c4d; }
+
+/* ===== ABOUT HIGHLIGHT ===== */
+.about-highlight {
+  max-width:1100px;
+  margin:50px auto;
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  align-items:center;
+  background:rgba(255,255,255,0.9);
+  padding:30px;
+  border-radius:8px;
+}
+
+.about-highlight img {
+  width:100%;
+  max-width:450px;
+  border-radius:8px;
+}
+
+.about-highlight-text {
+  flex:1;
+}
+
+.about-highlight-text h2 { margin-bottom:20px; }
+
+.about-highlight-text p { margin-bottom:15px; }
+
+.about-highlight-text a {
+  display:inline-block;
+  text-decoration:none;
+  background:#0b2c4d;
+  color:#fff;
+  padding:12px 25px;
+  border-radius:5px;
+  transition:0.3s;
+}
+
+.about-highlight-text a:hover { background:#f4b41a; color:#0b2c4d; }
+
+/* ===== OPERATIONS ===== */
+.operations {
+  max-width:1100px;
+  margin:70px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:0 20px;
+}
+
+.operation-box {
+  background:rgba(255,255,255,0.9);
+  padding:25px;
+  border-radius:8px;
+  text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+.operation-box h3 { margin-bottom:10px; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: rgba(11,44,77,0.85);
+  color: #fff;
+  text-align:center;
+  padding:20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  nav{display:none;}
+  .menu-icon{display:block;}
+  .about-highlight{flex-direction:column;}
+  .about-highlight img{max-width:100%;}
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in { animation: fadeIn 1s ease forwards; opacity:0; }
+@keyframes fadeIn {
+  to { opacity:1; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo"><img src="images/logo.png" alt="MCK Construction"></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="departments.html">Departments</a>
+      <a href="projects.html">Projects</a>
+      <a href="students.html">Students</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="departments.html">Departments</a>
+    <a href="projects.html">Projects</a>
+    <a href="students.html">Students</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<!-- HERO SLIDER -->
+<section class="slider">
+  <div class="slides">
+    <img src="images/slider1.jpg" alt="Project 1">
+    <img src="images/slider2.jpg" alt="Project 2">
+    <img src="images/slider3.jpg" alt="Project 3">
+  </div>
+  <div class="slider-buttons">
+    <button class="prev" onclick="prevSlide()">❮</button>
+    <button class="next" onclick="nextSlide()">❯</button>
+  </div>
+</section>
+
+<!-- ABOUT HIGHLIGHT -->
+<section class="about-highlight fade-in">
+  <img src="images/about-image.jpg" alt="About MCK">
+  <div class="about-highlight-text">
+    <h2>About MCK Construction</h2>
+    <p>MCK Construction delivers top-quality residential, commercial, and industrial projects in Cameroon with integrity, innovation, and professionalism.</p>
+    <a href="about.html">Learn More</a>
+  </div>
+</section>
+
+<!-- OPERATIONS HIGHLIGHT -->
+<section class="operations">
+  <div class="operation-box fade-in">
+    <h3>Residential Construction</h3>
+    <p>Modern homes from foundation to finishing, tailored to client needs.</p>
+  </div>
+  <div class="operation-box fade-in">
+    <h3>Commercial Projects</h3>
+    <p>Offices, malls, and business complexes built with professionalism.</p>
+  </div>
+  <div class="operation-box fade-in">
+    <h3>Industrial Projects</h3>
+    <p>Factories, warehouses, and heavy structures delivered efficiently.</p>
+  </div>
+  <div class="operation-box fade-in">
+    <h3>Renovation & Remodeling</h3>
+    <p>Upgrading existing structures with modern designs and quality work.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 MCK Construction. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+
+/* HERO SLIDER */
+const slides = document.querySelector('.slides');
+const slideImages = document.querySelectorAll('.slides img');
+let index = 0;
+
+function showSlide(n){
+  index = (n + slideImages.length) % slideImages.length;
+  slides.style.transform = translateX(${-index * 100}%);
+}
+
+function nextSlide(){ showSlide(index+1); }
+function prevSlide(){ showSlide(index-1); }
+
+/* Auto slide every 5 seconds */
+setInterval(()=>{ showSlide(index+1); },5000);
+</script>
+
+</body>
+</html>
