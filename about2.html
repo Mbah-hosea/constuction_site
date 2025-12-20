@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | MCK Construction</title>
+
+<style>
+/* ===================== GLOBAL STYLES ===================== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('images/project1.jpg')
+  no-repeat center center/cover;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ===================== HEADER ===================== */
+header {
+  background: #0d47a1;
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ /* box-shadow: 0 2px 5px rgba(0,0,0,0.1);*/
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.menu-btn {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Centered Logo */
+.logo-container {
+  flex: 1;
+  text-align: center;
+}
+
+.logo-container img {
+  width: 115px;
+  height: auto;
+}
+
+/* Desktop Navigation */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0056b3;
+  font-weight: bold;
+}
+nav a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+/* ===================== MOBILE NAV (Dropdown Menu) ===================== */
+.mobile-nav {
+  background: white;
+  width: 100%;
+  position: absolute;
+  top: 70px; 
+  left: 0;
+  padding: 20px 0;
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  z-index: 15;
+}
+
+.mobile-nav a {
+  padding: 12px 0;
+  text-decoration: none;
+  color: #0056b3;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+/* ===================== HERO SECTION ===================== */
+.hero {
+  background: url('site1.jpg') center/cover no-repeat;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* ===================== CONTENT ===================== */
+.container {
+  padding: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #004aad;
+  margin-bottom: 10px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card p {
+  margin: 10px 0;
+}
+
+/* ===================== VALUES LIST ===================== */
+.values {
+  list-style: none;
+  padding: 0;
+}
+
+.values li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  background: url('check.png') no-repeat left center;
+  background-size: 18px;
+}
+/* FOOTER */
+footer {
+  padding: 25px;
+  background: #003366;
+  color: white;
+  text-align: center;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  nav { display: none; }
+  .menu-btn { display: block; }
+  .hero { font-size: 24px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+  <div class="menu-btn">☰</div>
+
+  <div class="logo-container">
+    <img src="" alt="MCK Construction Logo">
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html"> Our Projects</a>
+    <a href="departments.html">Our Departments</a>
+    <a href="projects.html">Our projects</a></li>
+    <a href="Students.html">Students</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Mobile Dropdown Menu -->
+<div class="mobile-nav">
+  <a href="home.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="project.html"> Our Projects</a>
+  <a href="departments.html">Our Departments</a>
+  <a href="projects.html">Our projects</a></li>
+  <a href="Students.html">Studens</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<div class="hero">
+  Building Today for a Stronger Tomorrow
+</div>
+
+<!-- ===================== ABOUT CONTENT ===================== -->
+<div class="container">
+
+  <div class="card">
+    <div class="section-title">Who We Are</div>
+    <p>MCK Construction is a forward-thinking construction company delivering high-quality residential, commercial, and civil engineering projects with precision and integrity. With a full team of experts—from architects to engineers, roofers, electricians, plumbers, and builders—we provide end-to-end construction solutions.</p>
+
+    <p>We prioritize *durability, innovation, customer satisfaction, and professional excellence* in every project we undertake.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Our Mission</div>
+    <p>To provide world-class construction services through superior workmanship, transparent communication, and timely project delivery, ensuring our clients’ visions become long-lasting structures of value.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Our Vision</div>
+    <p>To become one of Africa’s most trusted and innovative construction firms—known for quality, professionalism, and building solutions that stand the test of time.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Our Slogan</div>
+    <p><strong>“We Build Today for a Stronger Tomorrow.”</strong></p>
+    <p><strong>“Quality. Trust. Durability.”</strong></p>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Core Values</div>
+    <ul class="values">
+      <li>Quality Workmanship</li>
+      <li>Integrity & Transparency</li>
+      <li>Customer Satisfaction</li>
+      <li>Innovation & Modern Technology</li>
+      <li>Safety & Professionalism</li>
+      <li>Timely Delivery</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Why Choose Us?</div>
+    <p>✔ Expert team of engineers, builders, architects, and technicians</p>
+    <p>✔ Modern equipment & high-grade materials</p>
+    <p>✔ Transparent pricing & open communication</p>
+    <p>✔ Strong project planning and supervision</p>
+    <p>✔ Proven record of successful projects</p>
+  </div>
+
+</div>
+<footer>
+  © 2025 MCK Construction. All Rights Reserved.
+</footer>
+
+<!-- JAVASCRIPT  -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector(".menu-btn");
+  const mobileNav = document.querySelector(".mobile-nav");
+
+  menuBtn.addEventListener("click", () => {
+    mobileNav.style.display =
+      mobileNav.style.display === "flex" ? "none" : "flex";
+  });
+});
+</script>
+
+</body>
+</html>

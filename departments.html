@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Departments | MCK Construction</title>
+<script src="https://kit.fontawesome.com/d51210834e.js" crossorigin="anonymous"></script>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  background:#f4f6f8;
+  color:#333;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:#0b2c4d;
+  padding:15px 20px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.header-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  flex:1;
+  text-align:center;
+}
+
+.logo img{
+  height:60px;
+}
+
+nav{
+  display:flex;
+  gap:20px;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+}
+nav a:hover {
+  color: #f4b41a;
+}
+
+.menu-icon{
+  display:none;
+  font-size:26px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu{
+  display:none;
+  color:#fff;
+  flex-direction:column;
+  background:#0b2c4d;
+}
+
+.mobile-menu a{
+  color:#fff;
+  padding:12px 20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  text-decoration:none;
+}
+
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url('images/department Back.jpg') center/cover no-repeat;
+  padding:80px 20px;
+  color:#fff;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:42px;
+}
+
+/* ===== DEPARTMENT MENU ===== */
+.dept-menu{
+  padding:15px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+  color: #fff;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  font-weight:600;
+}
+
+.dept-menu a{
+  font-weight:600;
+  text-decoration:none;
+}
+.dept-menu a:hover {
+  color: #f4b41a;
+  
+  
+}
+
+/* ===== DEPARTMENT SECTION ===== */
+.department{
+  max-width:1100px;
+  margin:70px auto;
+  background:#fff;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+.dept-hero{
+  height:260px;
+  position:relative;
+  overflow:hidden;
+}
+
+.dept-slide{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+
+.dept-slide.active{
+  opacity:1;
+}
+
+.dept-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:28px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.dept-content{
+  padding:30px;
+}
+
+.head-card{
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.head-card img{
+  width:180px;
+  height:180px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.head-info h3{
+  color:#0b2c4d;
+  margin-bottom:8px;
+}
+
+.head-info p{
+  margin-bottom:10px;
+}
+
+.contact{
+  font-size:15px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#0b2c4d;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  nav{display:none;}
+  .menu-icon{display:block;}
+  .dept-overlay{font-size:22px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <div class="logo">
+      <img src="images/logo.jpg" alt="MCK Construction Logo">
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="departments.html">Departments</a>
+      <a href="projects.html">Projects</a>
+      <a href="students.html">Students</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="departments.html">Departments</a>
+    <a href="projects.html">Projects</a>
+    <a href="students.html">Students</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Our Departments</h1>
+</div>
+
+<!-- DEPARTMENT MENU -->
+<div class="dept-menu">
+  <a href="#ceo">CEO</a>
+  <a href="#architecture">Architecture</a>
+  <a href="#construction">Construction</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#plumbing">Plumbing</a>
+  <a href="#carpentry">Carpentry</a>
+  <a href="#roofing">Roofing</a>
+  <a href="#staffing">Staffing</a>
+</div>
+
+<!-- TEMPLATE DEPARTMENT (REPEATABLE) -->
+<!-- CEO -->
+<div class="department" id="ceo">
+  <div class="dept-hero">
+    <div class="dept-slide active" style="background-image:url('images/ceoBack.jpg')"></div>
+    <div class="dept-slide" style="background-image:url('images/boss.jpg')"></div>
+    <div class="dept-overlay">Chief Executive Officer</div>
+  </div>
+  <div class="dept-content">
+    <div class="head-card">
+      <img src="images/boss.jpg">
+      <div class="head-info">
+        <h3>Managing Director / CEO</h3>
+        <p> <b class="">Mbah C. Kweti</b> Provides strategic leadership and oversees all company operations.</p>
+        <p><i class="fa-solid fa-envelope"></i><a href="mailto:hoseambah722@gmail.com">:Send Mail TO CEO</a></p>
+            <p><i class="fa-solid fa-phone"></i><a href="tel:+237676148177">:Call CEO</a></p>
+            <p><i class="fa-brands fa-square-whatsapp"></i><a href="https://wa.me/237676148177" target="_blank">:Chat OnWhatsAAP</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ARCHITECTURE -->
+<div class="department" id="architecture">
+  <div class="dept-hero">
+    <div class="dept-slide active" style="background-image:url('images/architectback1.jpg')"></div>
+    <div class="dept-slide" style="background-image:url('images/architectback2.jpg')"></div>
+    <div class="dept-slide" style="background-image:url('images/plan.jpg')"></div>
+    <div class="dept-overlay">Architecture Department</div>
+  </div>
+  <div class="dept-content">
+    <div class="head-card">
+      <img src="images/architech.jpg">
+      <div class="head-info">
+        <h3>Head of Architecture</h3>
+        <p>Design, planning, approvals, and visualization.</p>
+        <p><i class="fa-solid fa-envelope"></i><a href="mailto:hoseambah722@gmail.com">:Send Mail To architech</a></p>
+            <p><i class="fa-solid fa-phone"></i><a href="tel:+237676148177">:Call Architecture</a></p>
+            <p><i class="fa-brands fa-square-whatsapp"></i><a href="https://wa.me/237676148177" target="_blank">:Chat On WhatsAAP</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONSTRUCTION -->
+<div class="department" id="construction">
+  <div class="dept-hero">
+    <div class="dept-slide active" style="background-image:url('images/project1.jpg')"></div>
+    <div class="dept-slide" style="background-image:url('images/project3.jpg')"></div>
+    <div class="dept-overlay">Building Construction</div>
+  </div>
+  <div class="dept-content">
+    <div class="head-card">
+      <img src="images/boss.jpg">
+      <div class="head-info">
+        <h3>Construction Manager</h3>
+        <p>Site execution, supervision, and safety.</p>
+        <p><i class="fa-solid fa-envelope"></i><a href="mailto:hoseambah722@gmail.com">:Send Mail </a></p>
+            <p><i class="fa-solid fa-phone"></i><a href="tel:+237676148177">:Call Now</a></p>
+            <p><i class="fa-brands fa-square-whatsapp"></i><a href="https://wa.me/237676148177" target="_blank">:Chat On WhatsAAP</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTRICAL -->
+<div class="department" id="electrical">
+  <div class="dept-hero">
+    <div class="dept-slide active" style="background-image:url('images/electBack.jpg')"></div>
+    <div class="dept-slide" style="background-image:url('images/electBOSS.jpg')"></div>
+    <div class="dept-overlay">Electrical Department</div>
+  </div>
+  <div class="dept-content">
+    <div class="head-card">
+      <img src="images/electBOSS.jpg">
+      <div class="head-info">
+        <h3>Head of Electrical</h3>
+        <p> <b class="">Sule S.</b> Electrical installations and power systems.</p>
+        <p><i class="fa-solid fa-envelope"></i><a href="mailto:hoseambah722@gmail.com">:Send Mail</a></p>
+            <p><i class="fa-solid fa-phone"></i><a href="tel:+237676148177">:Call Now</a></p>
+            <p><i class="fa-brands fa-square-whatsapp"></i><a href="https://wa.me/237676148177" target="_blank">:Chat OnWhatsAAP</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PLUMBING -->
+<div class="department" id="plumbing">
+  <div class="dept-hero">
+    <div class="dept-slide active" style="background-image:url('images/plumb1.jpg')"></div>
+    <div class="dept-slide" style="background-image:url('images/plumb2.jpg')"></div>
+    <div class="dept-overlay">Plumbing Department</div>
+  </div>
+  <div class="dept-content">
+    <div class="head-card">
+      <img src="images/plumb-head.jpg">
+      <div class="head-info">
+        <h3>Head of Plumbing</h3>
+        <p>Water supply, drainage, and sanitation systems.</p>
+        <p><i class="fa-solid fa-envelope"></i><a href="mailto:hoseambah722@gmail.com">:Send Mail</a></p>
+            <p><i class="fa-solid fa-phone"></i><a href="tel:+237676148177">:Call Now</a></p>
+            <p><i class="fa-brands fa-square-whatsapp"></i><a href="https://wa.me/237676148177" target="_blank">:Chat On WhatsAAP</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CARPENTRY -->
+<div class="department" id="carpentry">
+  <div class="dept-hero">
+    <div class="dept-slide active" style="background-image:url('images/carpenteryBack.jpg')"></div>
+    <div class="dept-slide" style="background-image:url('images/carpenter.jpg')"></div>
+    <div class="dept-overlay">Carpentry Department</div>
+  </div>
+  <div class="dept-content">
+    <div class="head-card">
+      <img src="images/carpenter.jpg">
+      <div class="head-info">
+        <h3>Head of Carpentry</h3>
+        <p>Woodwork, fittings, and finishing.</p>
+        <p><i class="fa-solid fa-envelope"></i><a href="mailto:hoseambah722@gmail.com">:Send Mail</a></p>
+            <p><i class="fa-solid fa-phone"></i><a href="tel:+237676148177">:Call Now</a></p>
+            <p><i class="fa-brands fa-square-whatsapp"></i><a href="https://wa.me/237676148177" target="_blank">:Chat On WhatsAAP</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROOFING -->
+<div class="department" id="roofing">
+  <div class="dept-hero">
+    <div class="dept-slide active" style="background-image:url('images/roof1.jpg')"></div>
+    <div class="dept-slide" style="background-image:url('images/roof2.jpg')"></div>
+    <div class="dept-overlay">Roofing Department</div>
+  </div>
+  <div class="dept-content">
+    <div class="head-card">
+      <img src="images/roof-head.jpg">
+      <div class="head-info">
+        <h3>Head of Roofing</h3>
+        <p>Roof structures, sheets, and waterproofing.</p>
+        <p><i class="fa-solid fa-envelope"></i><a href="mailto:hoseambah722@gmail.com">:Send Mail</a></p>
+            <p><i class="fa-solid fa-phone"></i><a href="tel:+237676148177">:Call Now</a></p>
+            <p><i class="fa-brands fa-square-whatsapp"></i><a href="https://wa.me/237676148177" target="_blank">:Chat On WhatsAAP</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STAFFING -->
+<div class="department" id="staffing">
+  <div class="dept-hero">
+    <div class="dept-slide active" style="background-image:url('images/staff1.jpg')"></div>
+    <div class="dept-slide" style="background-image:url('images/staff2.jpg')"></div>
+    <div class="dept-overlay">Internal Design  & Staff Deco</div>
+  </div>
+  <div class="dept-content">
+    <div class="head-card">
+      <img src="images/staff-head.jpg">
+      <div class="head-info">
+        <h3>Head of Internal Designs</h3>
+        <p>Internal Decoration and Beauty.</p>
+        <p><i class="fa-solid fa-envelope"></i><a href="mailto:hoseambah722@gmail.com">:Send Mail</a></p>
+            <p><i class="fa-solid fa-phone"></i><a href="tel:+237676148177">:Call Now</a></p>
+            <p><i class="fa-brands fa-square-whatsapp"></i><a href="https://wa.me/237676148177" target="_blank">:Chat On
+                    WhatsAAP</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 MCK Construction. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+
+/* DEPARTMENT SLIDERS */
+document.querySelectorAll(".department").forEach(dept=>{
+  const slides = dept.querySelectorAll(".dept-slide");
+  let index = 0;
+
+  setInterval(()=>{
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  },4000);
+});
+</script>
+
+</body>
+</html>

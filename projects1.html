@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Project Gallery - Construction Company</title>
+
+<style>
+/* GENERAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+/* HEADER */
+header {
+    background: #0d47a1;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    flex: 1;
+}
+
+/* NAVIGATION */
+nav {
+    flex: 2;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 6px 10px;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #0d47a1;
+    padding: 15px;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.mobile-menu a:hover {
+    text-decoration: underline;
+}
+
+/* PAGE TITLE */
+.page-title {
+    text-align: center;
+    padding: 40px 10px;
+    background: #e3f2fd;
+    color: #0d47a1;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+/* GALLERY GRID */
+.gallery-container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding-bottom: 40px;
+}
+
+/* EACH CARD */
+.gallery-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.gallery-card:hover {
+    transform: scale(1.03);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* PROJECT INFO */
+.gallery-info {
+    padding: 15px;
+}
+
+.gallery-info h3 {
+    color: #0d47a1;
+    margin-bottom: 5px;
+}
+
+.gallery-info p {
+    color: #444;
+    font-size: 14px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <div class="logo">CONSTRUCTCO</div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="departments.html">Our Departments</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Our projects</a></li>
+            <li><a href="Students.html">Studens</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="departments.html">Our Departments</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Our projects</a></li>
+    <a href="Students.html">Studens</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE TITLE -->
+<div class="page-title">Our Project Gallery</div>
+
+<!-- PROJECT GALLERY -->
+<div class="gallery-container">
+
+    <!-- SAMPLE PROJECT 1 -->
+    <div class="gallery-card">
+        <img src="project1.jpg" alt="Modern Duplex" />
+        <div class="gallery-info">
+            <h3>Modern Duplex</h3>
+            <p>Location: Buea, Cameroon</p>
+        </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="gallery-card">
+        <img src="project2.jpg" alt="Office Complex" />
+        <div class="gallery-info">
+            <h3>Office Complex</h3>
+            <p>Location: Yaoundé, Cameroon</p>
+        </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="gallery-card">
+        <img src="project3.jpg" alt="Hotel Construction" />
+        <div class="gallery-info">
+            <h3>Hotel Construction</h3>
+            <p>Location: Douala, Cameroon</p>
+        </div>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="gallery-card">
+        <img src="project4.jpg" alt="Project4" />
+        <div class="gallery-info">
+            <h3>duplex Project</h3>
+            <p>Location: Limbe, Cameroon</p>
+        </div>
+    </div>
+
+    <!-- PROJECT 5 -->
+    <div class="gallery-card">
+        <img src="project5.jpg" alt="Luxury Apartment" />
+        <div class="gallery-info">
+            <h3>Luxury Apartment</h3>
+            <p>Location: Bamenda, Cameroon</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>
